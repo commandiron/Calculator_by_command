@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var numberBtnList: List<Button>
     private lateinit var processBtnList: List<Button>
 
-    private var getNumbersForSetInTextView = arrayListOf<Int>()
+    private var getNumbersForSetInTextView = arrayListOf<String>()
     private var processNumber = ""
 
     private var num1: Double? = null
@@ -40,7 +40,8 @@ class MainActivity : AppCompatActivity() {
             six_btn,
             seven_btn,
             eight_btn,
-            nine_btn
+            nine_btn,
+            dot_btn
         )
         return numberBtnList
     }
@@ -64,21 +65,24 @@ class MainActivity : AppCompatActivity() {
             it.setOnClickListener {
 
                 when (it.id) {
-                    zero_btn.id -> getNumbersForSetInTextView.add(0)
-                    one_btn.id -> getNumbersForSetInTextView.add(1)
-                    two_btn.id -> getNumbersForSetInTextView.add(2)
-                    three_btn.id -> getNumbersForSetInTextView.add(3)
-                    four_btn.id -> getNumbersForSetInTextView.add(4)
-                    five_btn.id -> getNumbersForSetInTextView.add(5)
-                    six_btn.id -> getNumbersForSetInTextView.add(6)
-                    seven_btn.id -> getNumbersForSetInTextView.add(7)
-                    eight_btn.id -> getNumbersForSetInTextView.add(8)
-                    nine_btn.id -> getNumbersForSetInTextView.add(9)
+                    zero_btn.id -> getNumbersForSetInTextView.add("0")
+                    one_btn.id -> getNumbersForSetInTextView.add("1")
+                    two_btn.id -> getNumbersForSetInTextView.add("2")
+                    three_btn.id -> getNumbersForSetInTextView.add("3")
+                    four_btn.id -> getNumbersForSetInTextView.add("4")
+                    five_btn.id -> getNumbersForSetInTextView.add("5")
+                    six_btn.id -> getNumbersForSetInTextView.add("6")
+                    seven_btn.id -> getNumbersForSetInTextView.add("7")
+                    eight_btn.id -> getNumbersForSetInTextView.add("8")
+                    nine_btn.id -> getNumbersForSetInTextView.add("9")
+                    dot_btn.id -> getNumbersForSetInTextView.add(".")
                 }
 
                 for (number in getNumbersForSetInTextView){
-                    processNumber = processNumber + number.toString()
+                    processNumber = processNumber + number
                 }
+
+                println(processNumber)
 
                 process_tv.text = processNumber
                 processNumber = ""
@@ -89,6 +93,7 @@ class MainActivity : AppCompatActivity() {
     fun process(processBtnList: List<Button>){
 
         processBtnList.forEach { it.setOnClickListener {
+
             when(it.id){
                 sum_btn.id -> {
                     previousProcess = "+"
@@ -125,6 +130,8 @@ class MainActivity : AppCompatActivity() {
 
                 C_btn.id ->{CButton()}
             }
+
+            processSymbol_tv.setText(previousProcess)
         } }
     }
 

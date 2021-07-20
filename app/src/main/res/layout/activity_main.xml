@@ -18,6 +18,28 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/result_tv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="end"
+            android:paddingTop="40dp"
+            android:paddingRight="30dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/processSymbol_tv"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center|end"
+            android:paddingRight="30dp"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/process_tv"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -28,16 +50,6 @@
             android:textColor="@android:color/darker_gray"
             tools:text="0" />
 
-        <TextView
-            android:id="@+id/result_tv"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:gravity="end"
-            android:paddingTop="40dp"
-            android:paddingRight="30dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@android:color/white"
-            tools:text="0" />
     </LinearLayout>
 
     <LinearLayout
@@ -250,7 +262,7 @@
             android:layout_height="80dp"
             android:layout_weight="3"
             android:background="@android:color/black"
-            android:text=","
+            android:text="."
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/white"></Button>
 
